@@ -1,0 +1,29 @@
+{
+    "name": "abelaguiar/anything",
+    "description": "Page of anything",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abel Aguiar",
+            "email": "abel.prog@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "erandir/plug-route": "^4.4",
+        "vlucas/phpdotenv": "^3.3",
+        "doctrine/orm": "^2.6",
+        "doctrine/dbal": "^2.9",
+        "symfony/cache": "^5.4",
+        "doctrine/annotations": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        },
+        "files": [
+            "app/Support/helpers.php"
+        ]
+    }
+}
