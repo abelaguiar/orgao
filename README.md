@@ -5,11 +5,6 @@ Execute no terminal e faça a instalação dos pacotes necessarios para o projet
 composer install
 ```
 
-Execute no terminal para iniciar o projeto na porta **8080**
-```sh
-./setup.sh
-```
-
 ## Configurando Banco de Dados
 
 Arquivo onde será colocado os dados de acesso ao banco:
@@ -25,4 +20,11 @@ DB_PASSWORD=""
 DB_DATABASE=""
 DB_DRIVER="pdo_mysql"
 DB_PORT="3306"
+```
+
+## Executando no browser
+
+Execute no terminal para iniciar o projeto na porta **8080**
+```sh
+./setup.sh
 ```
