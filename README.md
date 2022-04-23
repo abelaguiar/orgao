@@ -21,6 +21,12 @@ DB_DATABASE=""
 DB_DRIVER="pdo_mysql"
 DB_PORT="3306"
 ```
+Acesso o arquivo **db.sql** na pasta **config** para criar o banco de dados mysql e inserir o primeiro usuário.
+
+```txt
+Usuário: admin@admin.com
+Senha: password
+```
 
 ## Executando no browser
 
