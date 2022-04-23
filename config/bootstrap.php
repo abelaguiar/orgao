@@ -1,17 +1,16 @@
 <?php
 
-use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-
-require_once dirname(__DIR__)."/vendor/autoload.php";
-
-$dotenv = Dotenv\Dotenv::create(__DIR__.'/../');
-$dotenv->load();
+use Doctrine\ORM\Tools\Setup;
 
 $isDevMode = true;
 $config = Setup::createAnnotationMetadataConfiguration(
-            array(dirname(__DIR__)."/app/Entities"), $isDevMode, null, null, false
-        );
+    [dirname(__DIR__)."/app/Entities"], 
+    $isDevMode, 
+    null, 
+    null, 
+    false
+);
 
 $conn = array(
     'dbname' => getenv('DB_DATABASE'),

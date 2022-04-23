@@ -5,18 +5,18 @@ namespace App\Controllers;
 use App\Entities\Empresa;
 use PlugRoute\Http\Request;
 
-class EmpresaController
+class EmpresaController extends AbstractController
 {
     public function listagem()
     {
-        $empresas = entityManager()->getRepository(Empresa::class)->findAll();
+        $empresas =  $this->entityManager()->getRepository(Empresa::class)->findAll();
 
         return view('empresas/listagem', compact('empresas'));
     }
 
     public function mostrarItem($empresaId)
     {
-        $repository = entityManager()->getRepository(Empresa::class);
+        $repository = $this->entityManager()->getRepository(Empresa::class);
         $empresa = $repository->find($empresaId);
 
         if ($empresa === null) {
@@ -38,7 +38,7 @@ class EmpresaController
             $empresa = new Empresa();
             $empresa->setNome($request->get('nome'));
 
-            $em = entityManager();
+            $em = $this->entityManager();
             $em->persist($empresa);
             $em->flush();
         } else {
@@ -51,7 +51,7 @@ class EmpresaController
 
     public function editar($empresaId)
     {
-        $repository = entityManager()->getRepository(Empresa::class);
+        $repository = $this->entityManager()->getRepository(Empresa::class);
         $empresa = $repository->find($empresaId);
 
         if ($empresa === null) {
@@ -64,7 +64,7 @@ class EmpresaController
 
     public function atualizar($empresaId, Request $request)
     {
-        $em = entityManager();
+        $em = $this->entityManager();
 
         $repository = $em->getRepository(Empresa::class);
         $empresa = $repository->find($empresaId);
@@ -83,7 +83,7 @@ class EmpresaController
 
     public function excluir($empresaId)
     {
-        $em = entityManager();
+        $em = $this->entityManager();
 
         $repository = $em->getRepository(Empresa::class);
         $empresa = $repository->find($empresaId);

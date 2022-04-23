@@ -1,5 +1,5 @@
 <?php include "layouts/header.php"; ?>
 
-<h1>Dashboard</h1>
+<h3>Dashboard</h3>
 
 <?php include "layouts/footer.php"; ?>
