@@ -3,9 +3,9 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            Empresa
+            Usuário
             <p class="float-right">
-                <a href="/empresas" class="btn btn-sm btn-primary">Voltar</a>
+                <a href="/usuarios" class="btn btn-sm btn-primary">Voltar</a>
             </p>
         </h5>
     </div>
@@ -16,13 +16,13 @@
                     <td><b>ID</b></td>
                 </tr>
                 <tr>
-                    <td><?= $data['empresa']->getId() ?></td>
+                    <td><?= $data['usuario']->getId() ?></td>
                 </tr>
                 <tr>
                     <td><b>Nome</b></td>
                 </tr>
                 <tr>
-                    <td><?= $data['empresa']->getNome() ?></td>
+                    <td><?= $data['usuario']->getNome() ?></td>
                 </tr>
             </tbody>
         </table>
