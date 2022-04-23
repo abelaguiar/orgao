@@ -1,5 +1,10 @@
 # Iniciar o Projeto
 
+Execute no terminal e faça a instalação dos pacotes necessarios para o projeto:
+```sh
+composer install
+```
+
 Execute no terminal para iniciar o projeto na porta **8080**
 ```sh
 ./setup.sh
