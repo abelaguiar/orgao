@@ -10,6 +10,11 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'colaborador') ? 'active' : '' ?>" href="/colaboradores">
+            Colaboradores
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'usuario') ? 'active' : '' ?>" href="/usuarios">
             Usuários
         </a>

@@ -9,7 +9,7 @@ class EmpresaController extends AbstractController
 {
     public function listagem()
     {
-        $empresas =  $this->entityManager()->getRepository(Empresa::class)->findAll();
+        $empresas = $this->entityManager()->getRepository(Empresa::class)->findAll();
 
         return view('empresas/listagem', compact('empresas'));
     }

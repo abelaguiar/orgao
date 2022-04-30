@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            Criando empresa
+            Criando Empresa
             <p class="float-right">
                 <a href="/empresas" class="btn btn-sm btn-primary">Voltar</a>
             </p>

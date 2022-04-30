@@ -3,9 +3,9 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            Todas as Empresas
+            Todos os Colaboradores
             <p class="float-right">
-                <a href="/empresa/cadastrar" class="btn btn-sm btn-success">Cadastrar</a>
+                <a href="/colaborador/cadastrar" class="btn btn-sm btn-success">Cadastrar</a>
             </p>
         </h5>
     </div>
@@ -15,23 +15,25 @@
                 <tr>
                     <td>ID</td>
                     <td>Nome</td>
+                    <td>Empresa</td>
                     <td>Ações</td>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($data['empresas'] as $empresa) { ?>
+                <?php foreach($data['colaboradores'] as $colaborador) { ?>
                     <tr>
-                        <td><?= $empresa->getId() ?></td>
-                        <td><?= $empresa->getNome() ?></td>
+                        <td><?= $colaborador->getId() ?></td>
+                        <td><?= $colaborador->getNome() ?></td>
+                        <td><?= $colaborador->getEmpresa()->getNome() ?></td>
                         <td>
                             <div class="btn-group">
-                                <a href="/empresa/<?= $empresa->getId() ?>" class="btn btn-sm btn-primary">
+                                <a href="/colaborador/<?= $colaborador->getId() ?>" class="btn btn-sm btn-primary">
                                     Ver
                                 </a>
-                                <a href="/empresa/<?= $empresa->getId() ?>/editar" class="btn btn-sm btn-warning">
+                                <a href="/colaborador/<?= $colaborador->getId() ?>/editar" class="btn btn-sm btn-warning">
                                     Editar
                                 </a>
-                                <a href="/empresa/<?= $empresa->getId() ?>/excluir" class="btn btn-sm btn-danger">
+                                <a href="/colaborador/<?= $colaborador->getId() ?>/excluir" class="btn btn-sm btn-danger">
                                     Excluir
                                 </a>
                             </div>

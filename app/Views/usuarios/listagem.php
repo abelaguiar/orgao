@@ -28,13 +28,13 @@
                         <td>
                             <div class="btn-group">
                                 <a href="/usuario/<?= $usuario->getId() ?>" class="btn btn-sm btn-primary">
-                                    View
+                                    Ver
                                 </a>
                                 <a href="/usuario/<?= $usuario->getId() ?>/editar" class="btn btn-sm btn-warning">
-                                    Edit
+                                    Editar
                                 </a>
                                 <a href="/usuario/<?= $usuario->getId() ?>/excluir" class="btn btn-sm btn-danger">
-                                    Delete
+                                    Excluir
                                 </a>
                             </div>
                         </td>

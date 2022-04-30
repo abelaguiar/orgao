@@ -23,6 +23,16 @@ $route
         $route->post('/empresa/{id:\d+}/atualizar', '\EmpresaController@atualizar');
         $route->get('/empresa/{id:\d+}/excluir', '\EmpresaController@excluir');
 
+        #colaboradores páginas
+        $route->get('/colaboradores', '\ColaboradorController@listagem');
+        $route->get('/colaborador/cadastrar', '\ColaboradorController@cadastrar');
+        $route->get('/colaborador/{id:\d+}', '\ColaboradorController@mostrarItem');
+        $route->get('/colaborador/{id:\d+}/editar', '\ColaboradorController@editar');
+        #colaboradores funções salvar, atualizar e excluir
+        $route->post('/colaborador/salvar', '\ColaboradorController@salvar');
+        $route->post('/colaborador/{id:\d+}/atualizar', '\ColaboradorController@atualizar');
+        $route->get('/colaborador/{id:\d+}/excluir', '\ColaboradorController@excluir');
+
         #usuários páginas
         $route->get('/usuarios', '\UsuarioController@listagem');
         $route->get('/usuario/cadastrar', '\UsuarioController@cadastrar');
