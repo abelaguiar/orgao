@@ -43,4 +43,14 @@ $route
         $route->post('/usuario/{id:\d+}/atualizar', '\UsuarioController@atualizar');
         $route->get('/usuario/{id:\d+}/excluir', '\UsuarioController@excluir');
 
+        #fornecedores páginas
+        $route->get('/fornecedores', '\FornecedorController@listagem');
+        $route->get('/fornecedor/cadastrar', '\FornecedorController@cadastrar');
+        $route->get('/fornecedor/{id:\d+}', '\FornecedorController@mostrarItem');
+        $route->get('/fornecedor/{id:\d+}/editar', '\FornecedorController@editar');
+        #fornecedores funções salvar, atualizar e excluir
+        $route->post('/fornecedor/salvar', '\FornecedorController@salvar');
+        $route->post('/fornecedor/{id:\d+}/atualizar', '\FornecedorController@atualizar');
+        $route->get('/fornecedor/{id:\d+}/excluir', '\FornecedorController@excluir');
+
     });

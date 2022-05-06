@@ -19,6 +19,11 @@
             Usuários
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'fornecedor') ? 'active' : '' ?>" href="/fornecedores">
+            Fornecedores
+        </a>
+    </li>
 </ul>
 <div class="d-flex text-white">
     <?= $_SESSION['nome'] ?>
