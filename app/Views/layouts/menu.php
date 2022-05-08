@@ -15,13 +15,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'usuario') ? 'active' : '' ?>" href="/usuarios">
-            Usuários
+        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'fornecedor') ? 'active' : '' ?>" href="/fornecedores">
+            Fornecedores
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'fornecedor') ? 'active' : '' ?>" href="/fornecedores">
-            Fornecedores
+        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'usuario') ? 'active' : '' ?>" href="/usuarios">
+            Usuários
         </a>
     </li>
 </ul>
