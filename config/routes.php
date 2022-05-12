@@ -53,4 +53,14 @@ $route
         $route->post('/fornecedor/{id:\d+}/atualizar', '\FornecedorController@atualizar');
         $route->get('/fornecedor/{id:\d+}/excluir', '\FornecedorController@excluir');
 
+        #estoques páginas
+        $route->get('/estoques', '\EstoqueController@listagem');
+        $route->get('/estoque/cadastrar', '\EstoqueController@cadastrar');
+        $route->get('/estoque/{id:\d+}', '\EstoqueController@mostrarItem');
+        $route->get('/estoque/{id:\d+}/editar', '\EstoqueController@editar');
+        #estoques funções salvar, atualizar e excluir
+        $route->post('/estoque/salvar', '\EstoqueController@salvar');
+        $route->post('/estoque/{id:\d+}/atualizar', '\EstoqueController@atualizar');
+        $route->get('/estoque/{id:\d+}/excluir', '\EstoqueController@excluir');
+
     });
