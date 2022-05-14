@@ -43,7 +43,7 @@ class EstoqueController extends AbstractController
             $em = $this->entityManager();
 
             $estoque = new Estoque();
-            $estoque->setProduto($request->get('nome_produto'));
+            $estoque->setNomeProduto($request->get('nome_produto'));
             $estoque->setQuantidade($request->get('quantidade'));
 
             $fornecedor = $em->getRepository(Fornecedor::class)->find(
@@ -91,7 +91,7 @@ class EstoqueController extends AbstractController
             $request->get('fornecedor_id')
         );
 
-        $estoque->setProduto($request->get('nome_produto'));
+        $estoque->setNomeProduto($request->get('nome_produto'));
         $estoque->setQuantidade($request->get('quantidade'));
         $estoque->setFornecedor($fornecedor);
 

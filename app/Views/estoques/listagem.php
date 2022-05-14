@@ -24,7 +24,7 @@
                 <?php foreach($data['estoques'] as $estoque) { ?>
                     <tr>
                         <td><?= $estoque->getId() ?></td>
-                        <td><?= $estoque->getProduto() ?></td>
+                        <td><?= $estoque->getNomeProduto() ?></td>
                         <td><?= $estoque->getQuantidade() ?></td>
                         <td><?= $estoque->getFornecedor()->getNome() ?></td>
                         <td>

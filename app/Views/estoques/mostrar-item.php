@@ -25,7 +25,7 @@
                 </tr>
 
                 <tr>
-                    <td><?= $data['estoque']->getProduto() ?></td>
+                    <td><?= $data['estoque']->getNomeProduto() ?></td>
                 </tr>
 
                 <tr>

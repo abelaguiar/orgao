@@ -13,7 +13,7 @@
         <form action="/estoque/<?= $data['estoque']->getId() ?>/atualizar" method="POST">
             <div class="form-group">
                 <label>Produto</label>
-                <input type="text" name="nome_produto" class="form-control" value="<?= $data['estoque']->getProduto() ?>">
+                <input type="text" name="nome_produto" class="form-control" value="<?= $data['estoque']->getNomeProduto() ?>">
             </div>
             <div class="form-group">
                 <label>Quantidade</label>

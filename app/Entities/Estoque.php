@@ -15,8 +15,8 @@ class Estoque
     /** @ORM\Id @ORM\Column(type="integer") @ORM\GeneratedValue **/
     private $id;
 
-    /** @ORM\Column(type="string") */
-    private $nome_produto;
+    /** @ORM\Column(name= "nome_produto", type="string") */
+    private $nomeProduto;
 
      /** @ORM\Column(type="string") */
      private $quantidade;
@@ -32,14 +32,14 @@ class Estoque
         return $this->id;
     }
 
-    public function setProduto($nome_produto)
+    public function setNomeProduto($nomeProduto)
     {
-        $this->nome_produto = $nome_produto;
+        $this->nomeProduto = $nomeProduto;
     }
     
-    public function getProduto()
+    public function getNomeProduto()
     {
-        return $this->nome_produto;
+        return $this->nomeProduto;
     }
 
     public function setQuantidade($quantidade)
