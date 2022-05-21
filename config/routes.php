@@ -63,4 +63,15 @@ $route
         $route->post('/estoque/{id:\d+}/atualizar', '\EstoqueController@atualizar');
         $route->get('/estoque/{id:\d+}/excluir', '\EstoqueController@excluir');
 
+        #produtos páginas
+        $route->get('/produtos', '\ProdutoController@listagem');
+        $route->get('/produto/cadastrar', '\ProdutoController@cadastrar');
+        $route->get('/produto/{id:\d+}', '\ProdutoController@mostrarItem');
+        $route->get('/produto/{id:\d+}/editar', '\ProdutoController@editar');
+        #produtos funções salvar, atualizar e excluir
+        $route->post('/produto/salvar', '\ProdutoController@salvar');
+        $route->post('/produto/{id:\d+}/atualizar', '\ProdutoController@atualizar');
+        $route->get('/produto/{id:\d+}/excluir', '\ProdutoController@excluir');
+
+
     });

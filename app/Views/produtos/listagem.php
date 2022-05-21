@@ -3,9 +3,9 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            Estoques totais
+            Todas os Produtos
             <p class="float-right">
-                <a href="/estoque/cadastrar" class="btn btn-sm btn-success">Cadastrar</a>
+                <a href="/produto/cadastrar" class="btn btn-sm btn-success">Cadastrar</a>
             </p>
         </h5>
     </div>
@@ -14,28 +14,27 @@
             <thead>
                 <tr>
                     <td>ID</td>
-                    <td>Produto</td>
-                    <td>Quantidade</td>
-                    <td>Fornecedor</td>
+                    <td>Nome</td>
+                    <td>Valor</td>
                     <td>Ações</td>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($data['estoques'] as $estoque) { ?>
+                <?php foreach($data['produtos'] as $produto) { ?>
                     <tr>
-                        <td><?= $estoque->getId() ?></td>
-                        <td><?= $estoque->getProduto() ->getNome() ?></td>
-                        <td><?= $estoque->getQuantidade() ?></td>
-                        <td><?= $estoque->getFornecedor()->getNome() ?></td>
+                        <td><?= $produto->getId() ?></td>
+                        <td><?= $produto->getNome() ?></td>
+                        <td><?= $produto->getValor() ?></td>
+
                         <td>
                             <div class="btn-group">
-                                <a href="/estoque/<?= $estoque->getId() ?>" class="btn btn-sm btn-primary">
+                                <a href="/produto/<?= $produto->getId() ?>" class="btn btn-sm btn-primary">
                                     Ver
                                 </a>
-                                <a href="/estoque/<?= $estoque->getId() ?>/editar" class="btn btn-sm btn-warning">
+                                <a href="/produto/<?= $produto->getId() ?>/editar" class="btn btn-sm btn-warning">
                                     Editar
                                 </a>
-                                <a href="/estoque/<?= $estoque->getId() ?>/excluir" class="btn btn-sm btn-danger">
+                                <a href="/produto/<?= $produto->getId() ?>/excluir" class="btn btn-sm btn-danger">
                                     Excluir
                                 </a>
                             </div>

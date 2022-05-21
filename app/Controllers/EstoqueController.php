@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Entities\Estoque;
 use App\Entities\Fornecedor;
+use App\Entities\Produto;
 use PlugRoute\Http\Request;
 
 class EstoqueController extends AbstractController
@@ -33,24 +34,31 @@ class EstoqueController extends AbstractController
         $fornecedores = $this->entityManager()->getRepository(Fornecedor::class)->findAll();
 
         return view('estoques/cadastrar', compact('fornecedores'));
+
+        $produtos = $this->entityManager()->getRepository(Produto::class)->findAll();
+
+        return view('estoques/cadastrar', compact('produtos'));
     }
 
     public function salvar(Request $request)
     {
-        if (!is_null($request->get('nome_produto')) && !is_null($request->get('quantidade'))
+        if (!is_null($request->get('produto_id')) && !is_null($request->get('quantidade'))
             && !is_null($request->get('fornecedor_id')))
          {
             $em = $this->entityManager();
 
             $estoque = new Estoque();
-            $estoque->setNomeProduto($request->get('nome_produto'));
             $estoque->setQuantidade($request->get('quantidade'));
 
             $fornecedor = $em->getRepository(Fornecedor::class)->find(
-                $request->get('fornecedor_id')
+                $request->get('fornecedor_id'));
+            
+            $produto = $em->getRepository(Produto::class)->find(
+                $request->get('produto_id')
             );
 
             $estoque->setFornecedor($fornecedor);
+            $estoque->setProduto($produto);
 
             $em->persist($estoque);
             $em->flush();
@@ -67,13 +75,14 @@ class EstoqueController extends AbstractController
         $em = $this->entityManager();
         $estoque = $em->getRepository(Estoque::class)->find($estoqueId);
         $fornecedores = $em->getRepository(Fornecedor::class)->findAll();
+        $produtos = $em->getRepository(Produto::class)->findAll();
 
         if ($estoque === null) {
             echo "Estoque com ID $estoqueId não existe.\n";
             exit(1);
         }
 
-        return view('estoques/editar', compact('estoque', 'fornecedores'));
+        return view('estoques/editar', compact('estoque', 'fornecedores','produtos'));
     }
 
     public function atualizar($estoqueId, Request $request)
@@ -88,10 +97,13 @@ class EstoqueController extends AbstractController
         }
 
         $fornecedor = $em->getRepository(Fornecedor::class)->find(
-            $request->get('fornecedor_id')
+            $request->get('fornecedor_id'));
+           
+        $produto = $em->getRepository(Produto::class)->find(
+                $request->get('produto_id')
         );
 
-        $estoque->setNomeProduto($request->get('nome_produto'));
+        $estoque->setProduto($produto);
         $estoque->setQuantidade($request->get('quantidade'));
         $estoque->setFornecedor($fornecedor);
 

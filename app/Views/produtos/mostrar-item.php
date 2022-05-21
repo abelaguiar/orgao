@@ -3,9 +3,9 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            Estoque
+            Produto
             <p class="float-right">
-                <a href="/estoques" class="btn btn-sm btn-primary">Voltar</a>
+                <a href="/produtos" class="btn btn-sm btn-primary">Voltar</a>
             </p>
         </h5>
     </div>
@@ -15,33 +15,20 @@
                 <tr>
                     <td><b>ID</b></td>
                 </tr>
-
                 <tr>
-                    <td><?= $data['estoque']->getId() ?></td>
+                    <td><?= $data['produto']->getId() ?></td>
                 </tr>
-
                 <tr>
-                    <td><b>Produto</b></td>
+                    <td><b>Nome</b></td>
                 </tr>
-
                 <tr>
-                    <td><?= $data['estoque']->getProduto()->getNome()?></td>
+                    <td><?= $data['produto']->getNome() ?></td>
                 </tr>
-
                 <tr>
-                    <td><b>Quantidade</b></td>
+                    <td><b>Valor</b></td>
                 </tr>
-              
                 <tr>
-                    <td><?= $data ['estoque']->getQuantidade() ?></td>
-                </tr>
-
-                <tr>
-                    <td><b>Fornecedor</b></td>
-                </tr>
-
-                <tr>
-                    <td><?= $data['estoque']->getFornecedor()->getNome() ?></td>
+                    <td><?= $data['produto']->getValor() ?></td>
                 </tr>
             </tbody>
         </table>

@@ -36,12 +36,21 @@ CREATE TABLE `fornecedores` (
 
 CREATE TABLE `estoques` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nome_produto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `produto_id` int COLLATE utf8mb4_unicode_ci NOT NULL,
   `quantidade` int NOT NULL,
   `fornecedor_id` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  FOREIGN KEY (`fornecedor_id`) REFERENCES `fornecedores`(id)
+  FOREIGN KEY (`fornecedor_id`) REFERENCES `fornecedores`(id),
+  FOREIGN KEY (`produto_id`) REFERENCES `produtos`(id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `produtos` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `valor` float(7,5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO usuarios (nome, email, senha) 

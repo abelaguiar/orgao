@@ -12,9 +12,18 @@
     <div class="card-body">
         <form action="/estoque/<?= $data['estoque']->getId() ?>/atualizar" method="POST">
             <div class="form-group">
-                <label>Produto</label>
-                <input type="text" name="nome_produto" class="form-control" value="<?= $data['estoque']->getNomeProduto() ?>">
-            </div>
+            
+              <label>Produto</label>  
+                <select name="produto_id" class="form-control">
+                    <option value="">Selecione</option>
+                    <?php foreach ($data['produtos'] as $produto) { ?>
+                        <option value="<?= $produto->getId() ?>" 
+                            <?= ($data['estoque']->getProduto()->getId() == $produto->getId()) ? "selected" : ""?>
+                        >
+                            <?= $produto->getNome() ?>
+                        </option>
+                    <?php } ?>
+                </select>
             <div class="form-group">
                 <label>Quantidade</label>
                 <input type="int" name="quantidade" class="form-control" value="<?= $data['estoque']->getQuantidade() ?>">
@@ -27,10 +36,11 @@
                         <option value="<?= $fornecedor->getId() ?>" 
                             <?= ($data['estoque']->getFornecedor()->getId() == $fornecedor->getId()) ? "selected" : ""?>
                         >
-                            <?= $fornecedor->getNome() ?>
+                            <?= $produto->getNome() ?>
                         </option>
                     <?php } ?>
                 </select>
+            
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>

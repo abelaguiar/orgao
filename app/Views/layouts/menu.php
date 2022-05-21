@@ -4,17 +4,25 @@
             Início
         </a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'empresa') ? 'active' : '' ?>" href="/empresas">
             Empresas
         </a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'colaborador') ? 'active' : '' ?>" href="/colaboradores">
             Colaboradores
         </a>
     </li>
-    
+
+    <li class="nav-item">
+        <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'produto') ? 'active' : '' ?>" href="/produtos">
+            Produtos
+        </a>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'estoque') ? 'active' : '' ?>" href="/estoques">
             Estoques
@@ -26,6 +34,7 @@
             Fornecedores
         </a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link <?= strpos($_SERVER['REQUEST_URI'], 'usuario') ? 'active' : '' ?>" href="/usuarios">
             Usuários

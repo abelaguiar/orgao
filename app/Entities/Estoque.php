@@ -14,10 +14,7 @@ class Estoque
 {
     /** @ORM\Id @ORM\Column(type="integer") @ORM\GeneratedValue **/
     private $id;
-
-    /** @ORM\Column(name= "nome_produto", type="string") */
-    private $nomeProduto;
-
+    
      /** @ORM\Column(type="string") */
      private $quantidade;
 
@@ -27,19 +24,25 @@ class Estoque
      */
     private $fornecedor;
 
+    /** 
+     * @ManyToOne(targetEntity="Produto")
+     * @JoinColumn(name="produto_id", referencedColumnName="id") 
+     */
+    private $produto;
+
     public function getId()
     {
         return $this->id;
     }
 
-    public function setNomeProduto($nomeProduto)
+    public function setProduto(Produto $produto): void
     {
-        $this->nomeProduto = $nomeProduto;
+        $this->produto = $produto;
     }
     
-    public function getNomeProduto()
+    public function getProduto(): Produto
     {
-        return $this->nomeProduto;
+        return $this->produto;
     }
 
     public function setQuantidade($quantidade)
