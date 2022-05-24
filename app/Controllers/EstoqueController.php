@@ -30,14 +30,16 @@ class EstoqueController extends AbstractController
     }
 
     public function cadastrar()
+
     {
-        $fornecedores = $this->entityManager()->getRepository(Fornecedor::class)->findAll();
+        $em = $this->entityManager();
 
-        return view('estoques/cadastrar', compact('fornecedores'));
+        $produtos = $em->getRepository(Produto::class)->findAll();
 
-        $produtos = $this->entityManager()->getRepository(Produto::class)->findAll();
+        $fornecedores = $em->getRepository(Fornecedor::class)->findAll();
+           
+        return view('estoques/cadastrar', compact('produtos','fornecedores'));
 
-        return view('estoques/cadastrar', compact('produtos'));
     }
 
     public function salvar(Request $request)
