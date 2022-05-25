@@ -12,9 +12,14 @@
     <div class="card-body">
     <form action="/estoque/salvar" method="POST">
         <div class="form-group">
-            <label>Produto</label>
-            <input type="text" name="nome_produto" class="form-control">
-        </div>
+            <label>Produtos</label>
+            <select name="produto_id" class="form-control">
+                <option value="">Selecione</option>
+                <?php foreach ($data['produtos'] as $produto ) { ?>
+                    <option value="<?= $produto->getId() ?>"><?= $produto->getNome() ?></option>
+                <?php } ?>
+            </select>      
+            </div>
         <div class="form-group">
             <label>Quantidade</label>
             <input type="int" name="quantidade" class="form-control">
